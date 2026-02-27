@@ -120,6 +120,28 @@ shortenForm.addEventListener('submit', async (e) => {
     submitBtn.disabled = true;
 
     try {
+        // ตรวจสอบว่าลิ้งก์นี้ถูกย่อไว้แล้วหรือไม่
+        const { data: existingUrl, error: searchError } = await supabase
+            .from('urls')
+            .select('short_code')
+            .eq('original_url', originalUrl)
+            .maybeSingle();
+
+        if (existingUrl) {
+            // ถ้ามีอยู่แล้ว ให้นำโค้ดเดิมมาใช้เลย
+            const baseUrl = window.location.origin + window.location.pathname;
+            const fullShortUrl = `${baseUrl}?c=${existingUrl.short_code}`;
+
+            shortUrlText.textContent = fullShortUrl;
+            shortUrlText.href = fullShortUrl;
+            resultContainer.classList.remove('hidden');
+
+            urlInput.value = '';
+            submitBtn.textContent = 'ยืนยัน (ย่อลิ้ง)';
+            submitBtn.disabled = false;
+            return;
+        }
+
         // Create unique short code
         let code = generateShortCode();
         let isUnique = false;
