@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ย่อลิ้ง ง่ายๆ</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <div id="app" class="container" style="display: none;">
+        <header>
+            <h1 class="logo">
+                <span style="color: #4285F4;">Y</span><span style="color: #EA4335;">o</span><span
+                    style="color: #FBBC05;">r</span><span style="color: #4285F4;">l</span><span
+                    style="color: #34A853;">i</span><span style="color: #EA4335;">n</span><span
+                    style="color: #FBBC05;">k</span>
+            </h1>
+        </header>
+
+        <main>
+            <form id="shorten-form">
+                <div class="search-box">
+                    <svg class="search-icon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg>
+                    <input type="url" id="url-input" placeholder="วางลิ้งยาวๆ ของคุณที่นี่..." required>
+                </div>
+
+                <div class="buttons">
+                    <button type="submit" class="btn">ยืนยัน (ย่อลิ้ง)</button>
+                </div>
+            </form>
+
+            <div id="result-container" class="result hidden">
+                <p>ลิ้งของคุณพร้อมใช้งานแล้ว:</p>
+                <div class="short-url-box">
+                    <a href="#" id="short-url" target="_blank"></a>
+                    <button id="copy-btn" class="icon-btn" title="คัดลอกลิ้ง">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
+                            fill="currentColor">
+                            <path
+                                d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z" />
+                        </svg>
+                    </button>
+                </div>
+                <div id="toast" class="toast hidden">คัดลอกสำเร็จ!</div>
+            </div>
+        </main>
+
+        <footer>
+            <p>ระบบย่อลิ้งฟรี คล้ายหน้าค้นหาของ Google | ใช้ Supabase เป็นฐานข้อมูล</p>
+        </footer>
+    </div>
+
+    <div id="redirecting" class="fullscreen-message hidden">
+        <h2>กำลังพาท่านไปยังลิ้งเป้าหมาย...</h2>
+        <div class="loader"></div>
+    </div>
+
+    <div id="not-found" class="fullscreen-message hidden">
+        <h2>ไม่พบลิ้งที่ต้องการ</h2>
+        <p>ลิ้งนี้อาจถูกลบหรือไม่มีอยู่จริง</p>
+        <a href="/" class="btn" style="margin-top: 20px;">กลับสู่หน้าหลัก</a>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/app.js"></script>
+</body>
+
+</html>
