@@ -58,7 +58,7 @@ async function handleRedirect(code) {
     redirectingContainer.classList.remove('hidden');
 
     if (!supabase) {
-        alert('กรุณาตั้งค่า Supabase URL และ Key ในไฟล์ app.js ก่อนใช้งานระบบย่อลิ้ง');
+        alert('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ กรุณาตรวจสอบการตั้งค่า Vercel Environment Variables');
         redirectingContainer.classList.add('hidden');
         appContainer.style.display = 'flex';
         return;
@@ -109,7 +109,7 @@ shortenForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (!supabase) {
-        alert('กรุณาตั้งค่า Supabase URL และ Key ในไฟล์ app.js ก่อนใช้งานระบบย่อลิ้งครับ');
+        alert('ไม่สามารถเชื่อมต่อฐานข้อมูลได้ กรุณาตรวจสอบการตั้งค่า Vercel Environment Variables');
         return;
     }
 
