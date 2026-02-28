@@ -20,12 +20,25 @@
 
 body {
     font-family: arial, sans-serif;
-    background-color: var(--bg-color);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    background-color: #0b0c10;
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.8) 100%, transparent),
+        radial-gradient(1.5px 1.5px at 30% 50%, rgba(255, 255, 255, 1) 100%, transparent),
+        radial-gradient(2px 2px at 60% 80%, rgba(255, 255, 255, 0.9) 100%, transparent),
+        radial-gradient(1px 1px at 80% 10%, rgba(255, 255, 255, 0.7) 100%, transparent),
+        radial-gradient(1.5px 1.5px at 90% 60%, rgba(255, 255, 255, 0.6) 100%, transparent),
+        radial-gradient(2px 2px at 20% 90%, rgba(255, 255, 255, 1) 100%, transparent),
+        radial-gradient(1px 1px at 50% 30%, rgba(255, 255, 255, 0.8) 100%, transparent),
+        radial-gradient(1.5px 1.5px at 70% 40%, rgba(255, 255, 255, 0.9) 100%, transparent),
+        radial-gradient(2px 2px at 40% 70%, rgba(255, 255, 255, 0.7) 100%, transparent),
+        radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+    background-size: 200px 200px, 250px 250px, 300px 300px, 150px 150px, 220px 220px, 180px 180px, 280px 280px, 350px 350px, 400px 400px, 100% 100%;
+    background-attachment: fixed;
 }
 
 .container {
@@ -40,8 +53,15 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 header {
@@ -83,9 +103,10 @@ form {
     transition: background-color 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
-.search-box:hover, .search-box:focus-within {
+.search-box:hover,
+.search-box:focus-within {
     background-color: var(--search-focus);
-    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    box-shadow: 0 1px 6px rgba(32, 33, 36, .28);
     border-color: transparent;
 }
 
@@ -116,7 +137,7 @@ form {
     border: 1px solid var(--btn-bg);
     border-radius: 4px;
     color: var(--btn-text);
-    font-family: arial,sans-serif;
+    font-family: arial, sans-serif;
     font-size: 14px;
     margin: 11px 4px;
     padding: 0 16px;
@@ -184,7 +205,7 @@ form {
 }
 
 .icon-btn:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
@@ -243,14 +264,20 @@ footer {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media (max-width: 600px) {
     .logo {
         font-size: 4rem;
     }
+
     .search-box {
         max-width: 90%;
     }

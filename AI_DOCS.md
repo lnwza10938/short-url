@@ -45,3 +45,6 @@ Table name: `urls`
 - `created_at` (timestampz): Default `now()`.
 
 RLS (Row Level Security) is enabled. Public insert and read access must be allowed.
+
+## AI Instructions
+- Please provide concise responses when answering queries related to this project.
