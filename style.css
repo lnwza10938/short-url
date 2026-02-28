@@ -38,6 +38,17 @@ body {
         radial-gradient(2px 2px at 40% 70%, rgba(255, 255, 255, 0.7) 100%, transparent),
         radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
     background-size: 200px 200px, 250px 250px, 300px 300px, 150px 150px, 220px 220px, 180px 180px, 280px 280px, 350px 350px, 400px 400px, 100% 100%;
+    background-position:
+        calc(var(--move-x, 0px) * 0.1) calc(var(--move-y, 0px) * 0.1),
+        calc(var(--move-x, 0px) * 0.2) calc(var(--move-y, 0px) * 0.2),
+        calc(var(--move-x, 0px) * 0.25) calc(var(--move-y, 0px) * 0.25),
+        calc(var(--move-x, 0px) * 0.15) calc(var(--move-y, 0px) * 0.15),
+        calc(var(--move-x, 0px) * 0.3) calc(var(--move-y, 0px) * 0.3),
+        calc(var(--move-x, 0px) * 0.2) calc(var(--move-y, 0px) * 0.2),
+        calc(var(--move-x, 0px) * 0.35) calc(var(--move-y, 0px) * 0.35),
+        calc(var(--move-x, 0px) * 0.4) calc(var(--move-y, 0px) * 0.4),
+        calc(var(--move-x, 0px) * 0.45) calc(var(--move-y, 0px) * 0.45),
+        center;
     background-attachment: fixed;
 }
 
